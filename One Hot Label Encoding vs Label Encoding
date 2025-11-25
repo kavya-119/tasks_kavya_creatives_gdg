@@ -1,0 +1,60 @@
+📘 One-Hot Encoding vs Label Encoding (Humanised Explanation)
+
+When working with datasets, we often come across columns that contain text values — like gender, colors, cities, or product categories.
+Since machine learning models only understand numbers, we need a way to convert these text labels into numeric form.
+Two common techniques for this are Label Encoding and One-Hot Encoding.
+
+🔸 Label Encoding
+
+Label Encoding simply replaces each category with a unique number.
+
+For example:
+
+Female → 0
+
+Male → 1
+
+It’s easy and compact, but it comes with a catch:
+If the categories do not have any natural order, the model may mistakenly think that one value is greater than the other.
+This can confuse the model.
+
+Best used when the categories actually have an order, such as:
+
+Small < Medium < Large
+
+Beginner < Intermediate < Expert
+
+Here, numeric labels correctly represent the progression.
+
+🔹 One-Hot Encoding
+
+One-Hot Encoding takes a different approach.
+Instead of assigning a number, it creates new columns, one for each category, and marks them with 0 or 1.
+
+Example for the “Sex” column:
+
+Sex_Male
+
+Sex_Female
+
+Each row gets a 1 in the column that matches its category.
+
+This method does not imply any ranking between categories, making it ideal for situations where the categories are simply different and not ordered, such as:
+
+Colors
+
+Countries
+
+Animals
+
+Gender
+
+The only downside is that it creates more columns, especially if there are many categories.
+
+⭐ In Simple Words
+
+Use Label Encoding when the categories have a natural order.
+
+Use One-Hot Encoding when they don’t.
+
+Choosing the right method helps the model learn correctly and prevents false assumptions.
